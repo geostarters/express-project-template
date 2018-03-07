@@ -1,0 +1,32 @@
+// @flow
+"use strict";
+
+class DemoService {
+
+	static getSomething() {
+
+		return {"text": "GET: it works!"};
+
+	}
+
+	static postSomething() {
+
+		return {"text": "POST: it works!"};
+
+	}
+
+	static putSomething() {
+
+		return {"text": "PUT: it works!"};
+
+	}
+
+	static deleteSomething() {
+
+		return {"text": "DELETE: it works!"};
+
+	}
+
+}
+
+module.exports = DemoService;
