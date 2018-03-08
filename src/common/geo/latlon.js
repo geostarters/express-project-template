@@ -1,5 +1,6 @@
 // @flow
 "use strict";
+const assert = require("assert");
 
 /**
  * A `LatLon` object represents a given latitude and longitude coordinates.
@@ -14,7 +15,7 @@ class LatLon {
 	lon: number;
 
 	constructor(lat: number, lon: number) {
-
+		assert.ok(!(isNaN(lat) || isNaN(lon)));
 		const areNumbers = !(isNaN(lat) || isNaN(lon));
 		if (areNumbers) {
 

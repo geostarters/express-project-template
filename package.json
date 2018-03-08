@@ -6,13 +6,15 @@
   "engines": {
     "node": ">=6.4.0"
   },
-  "main": "src/index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon -w src",
-    "start": "node --trace-warnings src/index.js",
+    "build": "gulp build",
     "build-docs": "documentation build --github --format json --config ./docs/documentation.yml --output docs/components/api.json src/common/*/*.js",
+    "dev": "nodemon -w src",
     "lint": "eslint --fix --cache --ignore-path .gitignore src docs",
+    "release": "run-s test build",
+    "start": "run-s build start-node",
+    "start-node": "node --trace-warnings dist/index.js",
     "test": "run-s lint test-flow test-unit",
     "test-unit": "tap --reporter classic --no-coverage test/unit",
     "test-flow": "flow .",
@@ -27,6 +29,7 @@
     "tap": "^11.1.0"
   },
   "devDependencies": {
+    "babel-plugin-unassert": "^2.1.2",
     "coveralls": "^3.0.0",
     "documentation": "^5.3.5",
     "eslint": "^4.16.0",
@@ -37,6 +40,9 @@
     "flow-bin": "^0.64.0",
     "flow-coverage-report": "^0.4.1",
     "flow-remove-types": "^1.2.3",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-flow-remove-types": "^1.0.0",
     "nodemon": "^1.9.2",
     "npm-run-all": "^4.1.2"
   }
