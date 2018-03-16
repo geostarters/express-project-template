@@ -18,7 +18,9 @@ app.use(bodyParser.raw());
 app.use(cors());
 
 process.on("unhandledRejection", (reason, p) => {
+
 	console.log("Unhandled Rejection at: Promise", p, "reason:", reason);
+
 });
 
 app.use("/api/", apiRoutes());
