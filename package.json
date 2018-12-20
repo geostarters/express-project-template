@@ -25,14 +25,14 @@
     "cors": "^2.8.0",
     "eslint-config-geostart": "git+https://github.com/geostarters/eslint-config-geostart.git",
     "express": "^4.14.0",
-    "morgan": "^1.7.0",
-    "tap": "^11.1.0"
+    "morgan": "^1.9.1",
+    "tap": "^12.1.1"
   },
   "devDependencies": {
     "babel-plugin-unassert": "^2.1.2",
     "cluster": "^0.7.7",
     "coveralls": "^3.0.0",
-    "documentation": "^5.3.5",
+    "documentation": "^9.1.0",
     "eslint-config-node": "^2.0.0",
     "eslint-plugin-html": "^4.0.2",
     "flow-bin": "^0.64.0",
@@ -41,7 +41,7 @@
     "gulp": "^4.0",
     "gulp-babel": "^7.0.1",
     "gulp-flow-remove-types": "^1.0.0",
-    "nodemon": "^1.9.2",
+    "nodemon": "^1.18.9",
     "npm-run-all": "^4.1.2"
   }
 }
