@@ -21,9 +21,9 @@
     "test-cov": "nyc --require=flow-remove-types/register --reporter=text-summary --reporter=lcov --cache npm run test-unit"
   },
   "dependencies": {
+    "@geostarters/eslint-config": "0.0.1",
     "body-parser": "^1.15.2",
     "cors": "^2.8.0",
-    "eslint-config-geostart": "git+https://github.com/geostarters/eslint-config-geostart.git",
     "express": "^4.14.0",
     "morgan": "^1.7.0",
     "superlogin": "^0.6.1",
