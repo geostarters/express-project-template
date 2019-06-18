@@ -21,12 +21,13 @@ class DemoService {
 
 	}
 
-	static deleteSomething() {
+	static deleteSomething(param: String) {
 
-		return {"text": "DELETE: it works!"};
+		return {"text": "DELETE: it works!", "param": param};
 
 	}
 
 }
 
 module.exports = DemoService;
+

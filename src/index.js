@@ -6,9 +6,15 @@ const cluster = require("cluster");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const cors = require("cors");
+const helmet = require("helmet");
 const os = require("os");
 const apiRoutes = require("./routes/api");
-const DefaultConfig = require("./config");
+
+require("dotenv").config();
+
+require("core-js/stable");
+require("regenerator-runtime/runtime");
+
 
 const numCPUs = os.cpus().length;
 
@@ -34,13 +40,14 @@ if (cluster.isMaster) {
 } else {
 
 	const app = express();
-	app.set("port", process.env.PORT || DefaultConfig.port);
+	app.set("port", process.env.PORT || 3000);
 	app.use(express.static("static"));
 	app.use(logger("dev"));
 	app.use(bodyParser.json({limit: "10mb"}));
 	app.use(bodyParser.urlencoded({ extended: false }));
 	app.use(bodyParser.raw());
 	app.use(cors());
+	app.use(helmet());
 
 	process.on("unhandledRejection", (reason, p) => {
 
