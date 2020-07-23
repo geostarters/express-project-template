@@ -1,3 +1,4 @@
+// @flow
 // flow-typed signature: 2a91b5ed6fd7a9d53a4d78a6d32d9f1e
 // flow-typed version: b2980740dd/jest_v23.x.x/flow_>=v0.39.x
 
@@ -551,8 +552,7 @@ type JestExtendedMatchersType = {
 };
 
 interface JestExpectType {
-  not:
-    & JestExpectType
+  not: & JestExpectType
     & EnzymeMatchersType
     & DomTestingLibraryType
     & JestJQueryMatchersType
